@@ -16,6 +16,7 @@ export const actions = {
 
 		try {
 			let r = await login(user, cookies, request.headers.get('cf-connecting-ip'));
+			localStorage.removeItem("password");
 		} catch (e) {
 			return fail(400, { error: 'Login failed', message: e.message, ...form });
 		}
