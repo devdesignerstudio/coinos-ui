@@ -43,6 +43,7 @@ export const last = writable();
 export const loginRedirect = writable();
 export const decrypted = persistLocal('decrypted', {});
 export const newPayment = persistLocal('newPayment');
+export const password = persistLocal('password');
 export const passwordPrompt = writable();
 export const payments = persistLocal('transactions', []);
 export const pin = writable();
