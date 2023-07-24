@@ -13,7 +13,6 @@
 	let loaded;
 	let gen = async () => {
 		if (!browser) return;
-		setTimeout(() => (loaded = true), 50);
 
 		if (!$password) $passwordPrompt = true;
 
@@ -46,9 +45,7 @@
 		}
 	};
 
-	onMount(async () => {
-		await gen();
-	});
+    onMount(() => browser && setTimeout(() => (loaded = true), 50));
 
 	$: $pin?.length === 6 && gen(user);
 </script>
